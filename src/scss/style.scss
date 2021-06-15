@@ -6,21 +6,60 @@
 }
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
+@mixin defBtn {
+  width: 250px;
+  height: 60px;
+  background: rgba(0, 0, 0, 0);
+  border: solid #fff 2px;
+  margin: 10% 0;
+  font-size: 25px;
+  font-weight: medium;
+  transition: .4s ease;
+  &:hover {
+    color: #000;
+    background-color: #fff;
+  }
+}
+
+@mixin equilateral-triangle($direction, $size, $color) {
+  width: 0;
+  height: 0;
+  @if $direction == 'up' {
+      border-left: em($size) solid transparent;
+      border-right: em($size) solid transparent;
+      border-bottom: em($size) solid $color;
+  }
+  @else if $direction == 'down' {
+      border-left: em($size) solid transparent;
+      border-right: em($size) solid transparent;
+      border-top: em($size) solid $color;
+  }
+  @else if $direction == 'right' {
+      border-top: em($size) solid transparent;
+      border-bottom: em($size) solid transparent;
+      border-left: em($size) solid $color;
+  }
+  @else if $direction == 'left' {
+      border-top: em($size) solid transparent;
+      border-bottom: em($size) solid transparent;
+      border-right: em($size) solid $color;
+  }
+}
+
 body {
+  position: relative;
   background-color: #111;
   font-size: 16px;
   font-family: 'Roboto', sans-serif;
-}
-
-.container {
-  max-width: 1920px;
-  margin: 0 auto;
+  overflow: hidden;
 }
 
 // Intro
 .intro {
+  margin: 0 auto;
   position: relative;
   height: 100vh;
+  max-width: 1920px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -48,17 +87,74 @@ body {
     color: #D7D7D7;
   }
   .intro__button {
-    width: 250px;
-    height: 60px;
-    background: rgba(0, 0, 0, 0);
-    border: solid #fff 2px;
-    margin: 10% 0;
-    font-size: 25px;
-    font-weight: medium;
-    transition: .4s ease;
-    &:hover {
-      color: #000;
+    @include defBtn();
+  }
+}
+
+// Menu
+
+@keyframes fadedText {
+  0% {
+    color: rgb(182, 88, 245);
+  }
+  50% {
+    color: rgb(118, 218, 185);
+  }
+  100% {
+    color: rgb(52, 49, 214);
+  }
+}
+
+.menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #000;
+  top: 0;
+  left: 0;
+  right: 0;
+  .menu-exit {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    height: 5%;
+    &::before {
+      display: block;
+      content: '';
+      height: 20px;
+      width: 20px;
       background-color: #fff;
+    }
+  }
+  .menu__title {
+    font-size: 100px;
+    font-weight: 100;
+    letter-spacing: 10px;
+  }
+  .menu__nav {
+    margin-top: 10%;
+    transition: .4 ease;
+    .hud__elem {
+      height: 50px;
+      &:nth-child(1){
+      transform: rotate(45deg) translate(-30%, -30%);
+      }
+      &:nth-child(3){
+        transform: rotate(-135deg) translate(30%, 30%);
+      }
+    }
+    .nav-link {
+      font-size: 150px;
+      font-weight: 900;
+      margin: 0 20px;
+      transition: .4s ease;
+      animation: fadedText 4s infinite;
+      animation-direction: alternate;
+      animation-fill-mode: backwards;
+      animation-timing-function: linear;
     }
   }
 }
