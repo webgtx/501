@@ -33,6 +33,7 @@ hudBtns[0].addEventListener('click', () => {
   }, 500);
   fadeOut();
 })
+menuPage.style.transform = 'translate(-100vw, 0)';
 menuExitBtn.addEventListener('click', () => {
   menuPage.style.transition = '.4s ease';
   menuPage.style.transform = 'translate(-100vw, 0)';
