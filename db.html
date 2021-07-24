@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lib/style.css">
+    <title>База Данных 501</title>
+  </head>
+  <body> 
+    <div class="menu"><a class="exit-button" href="#home"> </a>
+      <h1 class="menu__title">МЕНЮ</h1>
+      <nav class="menu__nav"> <a class="nav__link" href="db.html">СОСТАВ</a><a class="nav__link" href="#">ПОВЫШЕНИЕ</a><a class="nav__link" href="#">КАРТЫ</a><a class="nav__link" href="#">ЧАТ</a><a class="nav__link" href="#">СТАИСТКИА</a><a class="nav__link" href="index.html">ИНТРО</a></nav>
+    </div><a class="menu-button" href="#" onclick="opnMnu()"></a>
+    <script src="lib/menu-dist.js"></script>
+    <div class="wrapper">
+      <nav class="nav"> 
+        <ul class="nav__link"> <a class="links" href="#structure">Состав</a></ul>
+        <ul class="nav__link"> <a class="links" href="#score">Отчётность начисления баллов</a></ul>
+        <ul class="nav__link"> <a class="links" href="#rulesbreaks">Нарушение и наказание </a></ul>
+        <ul class="nav__link"> <a class="links" href="#monitoring">Мониторинг</a></ul>
+        <ul class="nav__link"> <a class="links" href="#information">Информация о составе</a></ul>
+        <ul class="nav__link"> <a class="links" href="#scoreinfo">Баллы поощрения</a></ul>
+      </nav>
+      <main class="db"> </main>
+    </div>
+  </body>
+  <script src="lib/db-data-dist.js"></script>
+  <script src="lib/db-dist.js"> </script>
+</html>

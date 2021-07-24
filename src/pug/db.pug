@@ -1,0 +1,31 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="lib/style.css")
+    title База Данных 501
+  body 
+    //- Menu
+    include menu.pug
+    .wrapper
+      nav.nav 
+        ul.nav__link 
+          a(href="#structure" class="links") Состав
+        ul.nav__link 
+          a(href="#score" class="links") Отчётность начисления баллов
+        ul.nav__link 
+          a(href="#rulesbreaks" class="links") Нарушение и наказание 
+        ul.nav__link 
+          a(href="#monitoring" class="links") Мониторинг
+        ul.nav__link 
+          a(href="#information" class="links") Информация о составе
+        ul.nav__link 
+          a(href="#scoreinfo" class="links") Баллы поощрения
+      main.db 
+        
+                
+  script(src="lib/db-data-dist.js")
+  script(src="lib/db-dist.js") 
+      
