@@ -55,12 +55,14 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  overflow: auto;
   background-color: #222;
-  height: 100%;
+  height: 60vh;
   min-width: 50%;
+  background-repeat: no-repeat;
 }
 
 body {
@@ -178,7 +180,7 @@ body {
           justify-content: center;
   height: 100vh;
   width: 40vw;
-  background: rgba(0, 0, 0, 0.9);
+  background: black;
   top: 0;
   left: 0;
   right: 0;
@@ -205,6 +207,14 @@ body {
   font-size: calc(70px + (16 + 16 * 0.7) * ((100vw - 320px) / 1280));
   font-weight: 100;
   letter-spacing: 10px;
+  -webkit-animation: fadedText 4s infinite;
+          animation: fadedText 4s infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 .menu .menu__nav {
   display: -webkit-box;
@@ -232,14 +242,9 @@ body {
   -webkit-transition: 0.4s ease;
   transition: 0.4s ease;
   max-width: 400px;
-  -webkit-animation: fadedText 4s infinite;
-          animation: fadedText 4s infinite;
-  -webkit-animation-direction: alternate;
-          animation-direction: alternate;
-  -webkit-animation-fill-mode: backwards;
-          animation-fill-mode: backwards;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
+}
+.menu .menu__nav .nav__link:hover {
+  color: #27CBFF;
 }
 
 .menu-button {

@@ -126,7 +126,7 @@ body {
   justify-content: center;
   height: 100vh;
   width: 40vw;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0);
   top: 0;
   left: 0;
   right: 0;
@@ -146,6 +146,10 @@ body {
     font-size: calc(70px + (16 + 16 * 0.7) * ((100vw - 320px) / 1280));
     font-weight: 100;
     letter-spacing: 10px;
+    animation: fadedText 4s infinite;
+    animation-direction: alternate;
+    animation-fill-mode: backwards;
+    animation-timing-function: linear;
   }
   .menu__nav {
     display: flex;
@@ -161,11 +165,9 @@ body {
       font-weight: 900;
       transition: .4s ease;
       max-width: 400px;
-      animation: fadedText 4s infinite;
-      animation-direction: alternate;
-      animation-fill-mode: backwards;
-      animation-timing-function: linear;
-
+      &:hover {
+        color: #27CBFF;
+      }
     }
   }
 }
